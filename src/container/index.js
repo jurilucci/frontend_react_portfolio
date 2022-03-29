@@ -1,9 +1,9 @@
-import About from './About/About';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
-import Skills from './Skills/Skills';
-import Testimonial from './Testimonial/Testimonial';
-import Work from './Work/Work';
+import About from './About/About.jsx';
+import Footer from './Footer/Footer.jsx';
+import Header from './Header/Header.jsx';
+import Skills from './Skills/Skills.jsx';
+import Testimonial from './Testimonial/Testimonial.jsx';
+import Work from './Work/Work.jsx';
 
 export {
   About,

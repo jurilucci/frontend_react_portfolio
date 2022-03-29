@@ -1,5 +1,5 @@
-import AppWrap from './AppWrap';
-import MotionWrap from './MotionWrap';
+import AppWrap from './AppWrap.js';
+import MotionWrap from './MotionWrap.js';
 
 export {
   AppWrap,
