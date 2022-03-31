@@ -1,6 +1,7 @@
 { 
   "name":"Juri Lucci Portfolio",
   "short_name":"Juri Lucci Portfolio",
+  "start_url": "/",
   "icons":[
     {
       "src":"/android-chrome-192x192.png",

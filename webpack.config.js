@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
-
+const TerserPlugin = require('terser-webpack-plugin');
 require('dotenv').config({ path: './.env' });
 
 const config = {
@@ -21,6 +21,7 @@ const config = {
       template: 'public/index.html',
       favicon: 'public/favicon.ico',
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
     }),
@@ -48,10 +49,11 @@ const config = {
           loader: 'url-loader',
         },
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
 };
 
