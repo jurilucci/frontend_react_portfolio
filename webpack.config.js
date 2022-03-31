@@ -3,8 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const TerserPlugin = require('terser-webpack-plugin');
 require('dotenv').config({ path: './.env' });
+
+const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -26,8 +28,14 @@ const config = {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
     }),
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public/manifest.json'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
