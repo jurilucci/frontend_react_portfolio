@@ -34,6 +34,11 @@ const config = {
           from: path.resolve(__dirname, 'public/manifest.json'),
           to: path.resolve(__dirname, 'dist'),
         },
+        {
+          context: path.resolve(__dirname, 'public'),
+          from: '*.png',
+          to: path.resolve(__dirname, 'dist'),
+        },
       ],
     }),
   ],

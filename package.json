@@ -57,6 +57,7 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "imagemin": "^8.0.1",
     "node-sass": "^7.0.1",
     "prettier": "^2.6.1",
     "sass": "^1.49.9",

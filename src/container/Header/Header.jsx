@@ -43,7 +43,7 @@ const Header = () => (
       transition={{ duration: 0.5, delayChildren: 0.5 }}
       className="app__header-img"
     >
-      <img src={images.profile} alt="profile_bg" />
+      <img src={images.profile} alt="profile_bg" loading="lazy" />
       <motion.img
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 1, ease: 'easeInOut' }}
@@ -60,7 +60,7 @@ const Header = () => (
     >
       {[images.javascript, images.angular, images.react].map((circle, index) => (
         <div className="circle-cmp app__flex" key={`circle-${index}`}>
-          <img src={circle} alt="profile_bg" />
+          <img src={circle} alt="profile_bg" loading="lazy" />
         </div>
       ))}
     </motion.div>
