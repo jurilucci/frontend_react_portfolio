@@ -1,59 +1,32 @@
-# 🚀 Juri Lucci Portfolio!
+# :rocket: Juri Lucci Portfolio!
 
-A modern, responsive personal portfolio website built with React, Sanity CMS, and Framer Motion animations.
+A modern, responsive personal portfolio website built with React, consuming content from Sanity CMS, and featuring smooth Framer Motion animations.
 
 ## Features
 
-- **Responsive Design**: Looks great on all devices from mobile to desktop
+- **Responsive Design**: Optimized for all devices from mobile to desktop
 - **Modern UI/UX**: Clean, professional interface with smooth animations
-- **Dynamic Content**: Content management through Sanity CMS
+- **Dynamic Content**: Content pulled from Sanity CMS
 - **Interactive Sections**: Home, About, Skills, and Contact sections
 - **Social Media Integration**: Links to LinkedIn, Facebook, and Instagram profiles
 
 ## Technologies Used
 
-- **Frontend**:
-  - React.js
-  - SCSS/SASS for styling
-  - Framer Motion for animations
-  - React Icons
-  
-- **Backend/CMS**:
-  - Sanity.io for content management
-
-## Project Structure
-
-```
-frontend_react_portfolio/
-├── src/
-│   ├── assets/           # Images and other static assets
-│   ├── components/       # Reusable UI components
-│   │   ├── Navbar/       # Navigation bar component
-│   │   ├── NavigationDots.jsx
-│   │   └── SocialMedia.jsx
-│   ├── constants/        # Constants and image imports
-│   ├── container/        # Main section components
-│   │   ├── About/        # About section
-│   │   ├── Footer/       # Contact/footer section
-│   │   ├── Header/       # Hero/header section
-│   │   └── Skills/       # Skills section
-│   ├── wrapper/          # Higher-order components
-│   │   ├── AppWrap.js    # Container wrapper with navigation & social
-│   │   └── MotionWrap.js # Animation wrapper
-│   ├── App.js            # Main app component
-│   ├── App.scss          # Main stylesheet
-│   ├── client.js         # Sanity client configuration
-│   ├── index.js          # Entry point
-│   └── index.css         # CSS variables and reset
-```
+- React.js
+- SCSS/SASS for styling
+- Framer Motion for animations
+- React Icons
+- Sanity.io client for fetching content
 
 ## Setup and Installation
 
 ### Prerequisites
 - Node.js (v14.0 or later)
 - npm or yarn
+- A running Sanity CMS instance (see backend README)
 
-### Installing
+### Installation
+
 1. Clone the repository
    ```
    git clone https://github.com/yourusername/frontend_react_portfolio.git
@@ -77,6 +50,7 @@ frontend_react_portfolio/
    ```
    npm start
    ```
+   The app will be available at: http://localhost:3000
 
 ## Deployment
 
@@ -85,36 +59,23 @@ The project can be built for production using:
 npm run build
 ```
 
-## Sanity CMS Setup
+This will create a `build` folder with optimized production files that can be deployed to any static hosting service like Netlify, Vercel, or GitHub Pages.
 
-1. Install Sanity CLI
-   ```
-   npm install -g @sanity/cli
-   ```
+## Key Components
 
-2. Initialize a Sanity project (if not already done)
-   ```
-   sanity init
-   ```
-
-3. Start the Sanity studio
-   ```
-   cd sanity_studio
-   sanity start
-   ```
+- **App.js**: Main component that organizes all the sections
+- **AppWrap.js**: HOC that wraps each section with navigation and social media components
+- **MotionWrap.js**: HOC that applies animations to sections
+- **NavigationDots.jsx**: Side navigation component
+- **SocialMedia.jsx**: Social media links component
+- **Navbar.jsx**: Top navigation bar
 
 ## Customization
 
-- Update personal information in the Sanity studio
-- Modify styling in App.scss and component-specific stylesheets
+- Update styling in App.scss and component-specific stylesheets
 - Add or remove sections by updating the App.js component
+- The content is managed through the Sanity backend
 
-## License
+## Connecting to Sanity
 
-This project is licensed under the MIT License - see the LICENSE file for details
-
-## Acknowledgments
-
-- DM Sans font from Google Fonts
-- React Icons for social media icons
-- Framer Motion for animations
+The application connects to Sanity via the client.js file, which uses environment variables to establish the connection. Make sure your Sanity backend is properly set up and running.
